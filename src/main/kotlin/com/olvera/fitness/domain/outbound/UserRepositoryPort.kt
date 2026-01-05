@@ -4,6 +4,8 @@ import com.olvera.fitness.domain.model.User
 
 interface UserRepositoryPort {
 
-    fun save(user: User): User
+    suspend fun save(user: User): User
+
+    suspend fun findByEmail(email: String): User?
 
 }
