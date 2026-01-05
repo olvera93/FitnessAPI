@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Fitness Tracker API
+
+
+
+server:
+  error:
+    include-binging-errors: always
+    include-message: always
+    include-stacktrace: on_param
+  port: ${SERVER_PORT:8080}
+
+  ## MYSQL CONNECTION
+  datasource:
+    username: ${DATASOURCE_USERNAME:sa}
+    password: ${DATASOURCE_PASSWORD:password}
+    url: ${DATASOURCE_URL:jdbc:h2:mem:testdb}
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
